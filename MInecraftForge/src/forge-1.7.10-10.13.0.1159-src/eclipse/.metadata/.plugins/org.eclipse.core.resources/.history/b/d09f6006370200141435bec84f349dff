@@ -1,0 +1,23 @@
+package DMAexample.tools;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemArmor;
+
+public class CrystalArmor extends ItemArmor {
+
+	public CrystalArmor(ArmorMaterial crystalarmor, int renderIndex,
+			int armorType) {
+		super(crystalarmor, renderIndex, armorType);
+	
+		setCreativeTab(CreativeTabs.tabCombat);
+		
+		if(armorType == 0) {
+			setTextureName("crystalhelmet");
+			setUnlocalizedName("crystalhelmet");
+		}
+		else if(armorType == 1) {
+			setTextureName("crystalchestpiece)")
+			setUnlocalizedName("crystalChestPlate")
+		}
+	}
+}

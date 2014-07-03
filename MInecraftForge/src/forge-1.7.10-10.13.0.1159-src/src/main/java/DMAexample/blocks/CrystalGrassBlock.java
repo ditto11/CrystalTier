@@ -1,0 +1,73 @@
+package DMAexample.blocks;
+
+import java.util.Random;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.util.IIcon;
+
+public class CrystalGrassBlock extends Block {
+	
+	//Side Variables
+		public IIcon side0;//bottom
+		public IIcon side1;//top
+		public IIcon side2;//front
+		public IIcon side3;//back
+		public IIcon side4;//left
+		public IIcon side5;//right
+
+	public CrystalGrassBlock(Material p_i45394_1_) {
+		super(p_i45394_1_);
+		// TODO Auto-generated constructor stub
+		
+		setHardness(1.0f); //As hard as a pumpkin
+		setStepSound(soundTypeGrass);
+		setCreativeTab(CreativeTabs.tabBlock);
+		setHarvestLevel("shovel", 1); //Needs stone shovel to mine
+		setResistance(5.0f); //As resistant as a pumpkin
+		//setBlockTextureName("dmaexample:crystalgrasstop");
+		setLightLevel(9.0f); //Same light level as redstone ore
+		setLightOpacity(0);
+		setBlockName("Crystal Grass");
+	}
+	@Override
+	public Item getItemDropped(int metadata, Random random, int fortune) {
+		return Items.beef;
+	}
+	
+	public void registerBlockIcons(IIconRegister icon) {
+		side0 = icon.registerIcon("dmaexample:crystalgrasstop");
+		side1 = icon.registerIcon("dmaexample:crystaldirt");
+		side2 = icon.registerIcon("dmaexample:crystalbarkoakside");
+		side3 = icon.registerIcon("dmaexample:crystalbarkoakside");
+		side4 = icon.registerIcon("dmaexample:crystalbarkoakside");
+		side5 = icon.registerIcon("dmaexample:crystalbarkoakside");
+	}
+	
+	@Override
+	public IIcon getIcon(int side, int meta) {
+		if(side == 0) {
+			return side0;
+		}
+		else if(side == 1) {
+			return side1;
+		}
+		else if(side == 2) {
+			return side2;
+		}
+		else if(side == 3) {
+			return side3;
+		}
+		else if(side == 4) {
+			return side4;
+		}
+		else {
+			return side5;
+		}
+
+	}
+}

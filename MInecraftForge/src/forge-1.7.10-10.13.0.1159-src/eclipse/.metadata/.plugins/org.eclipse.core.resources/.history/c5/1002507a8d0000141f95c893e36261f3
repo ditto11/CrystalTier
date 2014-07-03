@@ -1,0 +1,8 @@
+package com.ditto11.examplemod;
+
+public class CommonProxy {
+	
+	public void registerRenderers() {
+		
+	}
+}

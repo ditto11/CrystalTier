@@ -1,0 +1,11 @@
+package DMAexample.items;
+
+import net.minecraft.item.Item;
+
+public class CrystallineVial extends Item {
+
+	public CrystallineVial() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

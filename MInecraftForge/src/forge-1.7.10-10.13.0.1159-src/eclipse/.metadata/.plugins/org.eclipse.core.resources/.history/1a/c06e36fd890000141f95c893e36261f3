@@ -1,0 +1,29 @@
+package com.ditto11.examplemod;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+
+@Mod(modid = References.MODID, version = References.VERSION)
+public class TestMod {
+	//@SidedProxy(clientSide = "com.ditto11.examplemod.ProxyClient", serverSide = "com.ditto11.examplemod.ProxyCommon";
+	
+	
+	//Variables
+	public static ProxyCommon proxyCommon;
+	
+	//Functions
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		
+	}
+	@EventHandler
+	public void load(FMLInitializationEvent event) {
+		proxyCommon.registerRenderInformation();
+	}
+	
+	public TestMod() {
+		
+	}
+}

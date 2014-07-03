@@ -1,0 +1,8 @@
+package com.ditto11.examplemod;
+
+public class References {
+	public static final String MODID = "Mod Test";
+	public static final String VERSION = "1.0";
+	public static final String Client = "com.ditto11.examplemod.ProxyClient";
+	public static final String Common = "com.ditto11.examplemod.ProxyCommon";
+}

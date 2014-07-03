@@ -1,0 +1,28 @@
+package DMAexample.blocks;
+
+import java.util.Random;
+
+import DMAexample.MyCode;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+
+public class CrystallineOre extends Block {
+
+	public CrystallineOre(Material p_i45394_1_) {
+		super(p_i45394_1_);
+		// TODO Auto-generated constructor stub
+		
+		setHardness(20.0f); //As hard as glowstone
+		setStepSound(soundTypeStone);
+		setCreativeTab(CreativeTabs.tabBlock);
+		setHarvestLevel("pickaxe", 3); //Needs diamond pickaxe to mine
+		setResistance(15.0f);
+		setBlockTextureName("dmaexample:crystallineore");
+		setLightLevel(1.0f); //Same light level as a mushroom
+		setLightOpacity(4000); //Mostly opaque
+		setBlockName("Crystalline Ore");
+	}
+}

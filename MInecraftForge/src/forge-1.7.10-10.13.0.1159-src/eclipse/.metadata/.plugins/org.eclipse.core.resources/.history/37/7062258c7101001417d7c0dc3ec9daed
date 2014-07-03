@@ -1,0 +1,24 @@
+package DMAexample.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+
+public class CrystalBarkOak extends Block {
+
+	public CrystalBarkOak(Material p_i45394_1_) {
+		super(p_i45394_1_);
+		// TODO Auto-generated constructor stub
+		
+		setHardness(2.2f); //Slightly Harder than Oak
+		setStepSound(soundTypeWood);
+		setCreativeTab(CreativeTabs.tabBlock);
+		setHarvestLevel("axe", 1); //Needs stone axe to mine
+		setResistance(5.0f);
+		setBlockTextureName("dmaexample:crystalskin");
+		setLightLevel(15.0f); //Same light level as glowstone
+		setLightOpacity(0);
+		setBlockName("Crystal");
+	}
+
+}

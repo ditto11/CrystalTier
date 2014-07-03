@@ -1,0 +1,11 @@
+package DMAexample.items;
+
+import net.minecraft.item.Item;
+
+public class SeedPouch extends Item {
+
+	public SeedPouch() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

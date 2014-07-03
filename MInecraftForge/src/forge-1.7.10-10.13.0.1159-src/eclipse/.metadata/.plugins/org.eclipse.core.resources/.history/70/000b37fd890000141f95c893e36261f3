@@ -1,0 +1,7 @@
+package com.ditto11.examplemod;
+
+public class ProxyClient extends ProxyCommon {
+	public void registerRenderInformation() {
+		
+	}
+}

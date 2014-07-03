@@ -1,0 +1,23 @@
+package DMAexample.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.util.IIcon;
+
+public class FeyOak extends Block {
+	
+		//Side Variables
+		public IIcon side0;//bottom
+		public IIcon side1;//top
+		public IIcon side2;//front
+		public IIcon side3;//back
+		public IIcon side4;//left
+		public IIcon side5;//right
+
+
+	public FeyOak(Material p_i45394_1_) {
+		super(p_i45394_1_);
+		// TODO Auto-generated constructor stub
+	}
+
+}

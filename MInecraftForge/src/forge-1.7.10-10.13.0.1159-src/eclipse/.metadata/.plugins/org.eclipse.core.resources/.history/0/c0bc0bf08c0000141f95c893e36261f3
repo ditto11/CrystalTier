@@ -1,0 +1,5 @@
+package com.ditto11.examplemod.client;
+
+public class ClientProxy {
+
+}

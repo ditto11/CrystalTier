@@ -1,0 +1,7 @@
+package DMAexample.food;
+
+import net.minecraft.item.Itemfood;
+
+public class SugarCookie extends Itemfood {
+
+}

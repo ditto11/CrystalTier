@@ -1,0 +1,11 @@
+package DMAexample.items;
+
+import net.minecraft.item.Item;
+
+public class CrystallineShard extends Item {
+
+	public CrystallineShard() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

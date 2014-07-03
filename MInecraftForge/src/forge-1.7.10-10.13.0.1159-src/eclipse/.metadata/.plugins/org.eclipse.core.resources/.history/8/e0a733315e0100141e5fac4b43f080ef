@@ -1,0 +1,11 @@
+package DMAexample.items;
+
+import net.minecraft.item.Item;
+
+public class WoodenMace extends Item {
+
+	public WoodenMace() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

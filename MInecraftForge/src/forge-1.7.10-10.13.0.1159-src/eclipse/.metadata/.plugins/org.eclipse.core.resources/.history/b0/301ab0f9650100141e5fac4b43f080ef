@@ -1,0 +1,16 @@
+package DMAexample.items;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class WoodenMace extends Item {
+
+	public WoodenMace() {
+		
+		setUnlocalizedName("Wooden Mace");
+		setCreativeTab(CreativeTabs.tabCombat);
+		setMaxStackSize(1);
+		setDamage(, 3);
+	}
+
+}

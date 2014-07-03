@@ -1,0 +1,11 @@
+package DMAexample.items;
+
+import net.minecraft.item.Item;
+
+public class CrystalIngot extends Item {
+
+	public CrystalIngot() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

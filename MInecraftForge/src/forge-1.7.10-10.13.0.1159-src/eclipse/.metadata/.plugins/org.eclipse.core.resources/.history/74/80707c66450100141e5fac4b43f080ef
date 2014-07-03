@@ -1,0 +1,23 @@
+package DMAexample.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+
+public class CrystalGrassBlock extends Block {
+
+	public CrystalGrassBlock(Material p_i45394_1_) {
+		super(p_i45394_1_);
+		// TODO Auto-generated constructor stub
+		
+		setHardness(1.0f); //As hard as a pumpkin
+		setStepSound(soundTypeGrass);
+		setCreativeTab(CreativeTabs.tabBlock);
+		setHarvestLevel("shovel", 1); //Needs stone shovel to mine
+		setResistance(5.0f); //As resistant as a pumpkin
+		setBlockTextureName("mycelium_top");
+		setLightLevel(9.0f); //Same light level as redstone ore
+		setLightOpacity(0);
+	}
+
+}

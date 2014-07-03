@@ -1,0 +1,16 @@
+package exampleMod;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.Mod.Instance;
+
+@Mod(modid="ModTest", name="Mod Test", version="1.0")
+public class TestMod {
+	
+	@Instance(value = "GGenericModID")
+	public static TestMod instance;
+	
+	//@SidedProxy(clientSide=com.ditto11.examplemod.client.ClientProxy, serverSide=com.ditto11.examplemod.CommonProxy)
+	@SidedProxy();
+	
+}
