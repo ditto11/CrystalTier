@@ -1,0 +1,23 @@
+package DMAexample.biomes;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class TestBiome extends BiomeGenBase {
+
+	public TestBiome(int height) {
+		super(height);
+	
+		// Top layer
+		topBlock = Blocks.cake;
+		//3-5 layers below top layer
+		fillerBlock = Blocks.melon_block;
+		
+	}
+
+	public TestBiome(int p_i1971_1_, boolean register) {
+		super(p_i1971_1_, register);
+		// TODO Auto-generated constructor stub
+	}
+
+}

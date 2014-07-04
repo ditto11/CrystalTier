@@ -1,0 +1,11 @@
+package DMAexample.crops;
+
+import net.minecraft.block.BlockCrops;
+
+public class SnakeRoot extends BlockCrops {
+
+	public SnakeRoot() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

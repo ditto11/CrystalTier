@@ -1,0 +1,17 @@
+package DMAexample.biomes;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class FieldBiome extends BiomeGenBase {
+
+	public FieldBiome(int height) {
+		super(height);
+		
+		setHeight(height_PartiallySubmerged);
+		topBlock = Blocks.grass;
+		fillerBlock = Blocks.dirt;
+		
+		setBiomeName("Field");
+	}
+}

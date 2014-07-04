@@ -1,7 +1,4 @@
-/**
- * 
- */
-package DMAexample.worldGen;
+ package DMAexample.worldGen;
 
 import java.util.Random;
 
@@ -53,13 +50,11 @@ public class SampleGenerationClass implements IWorldGenerator
 			
 			//50 - How large is the vein? How many spawn together?
 			(new WorldGenMinable(MyCode.crystallineOre, 4)).generate(world, random, chunkX, chunkY, chunkZ);
-		}
-		
+		}		
 	}
 	
 	private void generateInEnd(World world, Random random, int x, int z) {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

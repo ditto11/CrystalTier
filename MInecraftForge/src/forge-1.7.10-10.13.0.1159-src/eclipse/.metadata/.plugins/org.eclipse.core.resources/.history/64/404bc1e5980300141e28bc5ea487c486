@@ -1,0 +1,13 @@
+package DMAexample.items;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemSeeds;
+
+public class SnakeRootSeed extends ItemSeeds {
+
+	public SnakeRootSeed(Block crop, Block soil) {
+		super(crop, soil);
+		// TODO Auto-generated constructor stub
+	}
+
+}

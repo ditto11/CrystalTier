@@ -1,0 +1,15 @@
+package DMAexample.crops;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+
+public class Snakeroot extends Block {
+
+	public Snakeroot(Material material) {
+		super(material);
+		setBlockName("Snakeroot");
+		setCreativeTab(CreativeTabs.tabDecorations);
+		
+	}
+}

@@ -1,0 +1,10 @@
+package DMAexample.edibles;
+
+import net.minecraft.item.ItemPotion;
+
+public class CrystalSkinPotion extends ItemPotion {
+
+	public CrystalSkinPotion() {
+		
+	}
+}

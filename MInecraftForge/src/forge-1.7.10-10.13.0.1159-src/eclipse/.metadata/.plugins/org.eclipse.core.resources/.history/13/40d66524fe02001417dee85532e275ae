@@ -1,0 +1,17 @@
+package DMAexample.biomes;
+
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class BiomeFactorsTest extends BiomeGenBase {
+
+	public BiomeFactorsTest(int p_i1971_1_) {
+		super(p_i1971_1_);
+		// TODO Auto-generated constructor stub
+	}
+
+	public BiomeFactorsTest(int p_i1971_1_, boolean register) {
+		super(p_i1971_1_, register);
+		// TODO Auto-generated constructor stub
+	}
+
+}

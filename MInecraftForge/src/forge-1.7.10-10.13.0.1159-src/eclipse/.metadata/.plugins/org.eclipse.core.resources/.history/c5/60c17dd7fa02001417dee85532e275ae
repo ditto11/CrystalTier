@@ -1,0 +1,21 @@
+package DMAexample.biomes;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class TestBiome extends BiomeGenBase {
+
+	public TestBiome(int height) {
+		super(height);
+	
+		// Top layer
+		topBlock = Blocks.mycelium;
+		//3-5 layers below top layer
+		fillerBlock = Blocks.dirt;
+		
+		setBiomeName("Test Biome");
+		setDisableRain();
+		setHeight(height_HighPlateaus);	
+		setColor(waterColorMultiplier);
+	}
+}

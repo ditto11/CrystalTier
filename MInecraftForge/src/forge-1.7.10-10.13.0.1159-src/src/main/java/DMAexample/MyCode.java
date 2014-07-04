@@ -1,13 +1,16 @@
 package DMAexample;
 
+import java.lang.reflect.Field;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import DMAexample.biomes.FieldBiome;
 import DMAexample.blocks.CrystalBlock;
 import DMAexample.blocks.CrystallineOre;
-import DMAexample.blocks.FeyOak;
-import DMAexample.food.SugarCookie;
+import DMAexample.crops.Snakeroot;
+import DMAexample.items.CrystalDust;
 import DMAexample.items.CrystalIngot;
-import DMAexample.items.CrystallineShard;
-import DMAexample.items.CrystallineVial;
-import DMAexample.items.SeedPouch;
+import DMAexample.items.SnakerootSeed;
 import DMAexample.tools.CrystalArmor;
 import DMAexample.tools.CrystalAxe;
 import DMAexample.tools.CrystalHoe;
@@ -23,29 +26,35 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemPotion;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class MyCode {
 	
 	//Ore Generation
 	public static SampleGenerationClass crystalGeneration = new SampleGenerationClass();
 	
+	public static BiomeGenBase fieldBiome;
+	
 	//block variables
 	public static Block crystalBlock;
-	public static Block feyOak;
 	public static Block crystallineOre;
 	
 	//item variables
-	public static Item crystallineShard;
-	public static Item crystallineVial;
 	public static Item crystalIngot;
+	public static Item crystalDust;
 	
-	//food variable
-
+	//crop variables
+	public static Block snakeroot;
+	public static ItemSeeds snakerootSeed;
+	
+	//potion variables
+	
 	
 	//Enum Materials
 	public static ToolMaterial crystal = EnumHelper.addToolMaterial("Crystal", 4, 1650, 9.0f, 5.0f, 27);
@@ -66,22 +75,26 @@ public class MyCode {
 	
 	public static void MyItems() {
 		//Item Declarations
-		crystallineShard = new CrystallineShard();
-		crystallineVial = new CrystallineVial();
-		crystalSword = new CrystalSword(crystal);
+		// Miscellaneous items
 		crystalIngot = new CrystalIngot();
+		crystalDust = new CrystalDust();
+		snakerootSeed = new SnakerootSeed(MyCode.snakeroot, Blocks.farmland);		
+		//Tools
+		crystalSword = new CrystalSword(crystal);
 		crystalPickaxe = new CrystalPickaxe(crystal);
 		crystalAxe = new CrystalAxe(crystal);
 		crystalShovel = new CrystalShovel(crystal);
 		crystalHoe = new CrystalHoe(crystal);
+		//Armor
 		crystalHelmet = new CrystalArmor(crystalarmor, 0, 0);
 		crystalChestPlate = new CrystalArmor(crystalarmor, 0, 1);
 		crystalLeggings = new CrystalArmor(crystalarmor, 0, 2);
 		crystalBoots = new CrystalArmor(crystalarmor, 0, 3);
+		//Alchemy
+		
 		
 		//game registration
-		GameRegistry.registerItem(crystallineShard, "Crystalline Shard");
-		GameRegistry.registerItem(crystallineVial, "Crystalline Vial");
+		GameRegistry.registerItem(crystalDust, "Crystalline Dust");
 		GameRegistry.registerItem(crystalSword, "Crystal Sword");
 		GameRegistry.registerItem(crystalIngot, "Crystal Ingot");
 		GameRegistry.registerItem(crystalPickaxe, "Crystal Pickaxe");
@@ -93,73 +106,48 @@ public class MyCode {
 		GameRegistry.registerItem(crystalLeggings, "Crystal Leggings");
 		GameRegistry.registerItem(crystalBoots, "Crystal Boots");
 		
+		//Seeds
+		MinecraftForge.addGrassSeed(new ItemStack(snakerootSeed), 0);
+		
+		
 		//lang registrations
-		LanguageRegistry.addName(crystallineShard, "Crystalline Shard");
-		LanguageRegistry.addName(crystallineVial, "Crystalline Vial");
+		LanguageRegistry.addName(crystalDust, "Crystal Dust");
 		LanguageRegistry.addName(crystalSword, "Crystal Sword");
 		LanguageRegistry.addName(crystalIngot, "Crystal Ingot");
 		LanguageRegistry.addName(crystalPickaxe, "Crystal Pickaxe");
 		LanguageRegistry.addName(crystalAxe, "Crystal Axe");
 		LanguageRegistry.addName(crystalShovel, "Crystal Shovel");
 		LanguageRegistry.addName(crystalHoe, "Crystal Hoe");
+		LanguageRegistry.addName(snakerootSeed, "Snakeroot Seed");
 	}
 	public static void MyBlocks() {
 		
 		//Block Declarations
 		crystalBlock = new CrystalBlock(Material.glass);
-		feyOak = new FeyOak(Material.wood);
 		crystallineOre = new CrystallineOre(Material.ground);
+		snakeroot = new Snakeroot(Material.plants);
+		
+		fieldBiome = new FieldBiome(2);
 		
 		//Game Registration
 		GameRegistry.registerBlock(crystalBlock, "CrystalBlock");
-		GameRegistry.registerBlock(feyOak, "FeyOak");
 		GameRegistry.registerBlock(crystallineOre, "CrystallineOre");
+		GameRegistry.registerBlock(snakeroot, "Snakeroot");
 		
 		//Lang Registration
 		LanguageRegistry.addName(crystalBlock, "Crystal");
-		LanguageRegistry.addName(feyOak, "Fey Oak");
 		LanguageRegistry.addName(crystallineOre, "Crystalline Ore");
+		LanguageRegistry.addName(snakeroot, "Snakeroot");
 		
 		//World Registration
 		GameRegistry.registerWorldGenerator(crystalGeneration, 1);
 
 	}
 	public static void MyRecipes() {
-		GameRegistry.addShapedRecipe(new ItemStack(Items.pumpkin_pie), new Object[] {
-			"   ","ACA","BBB",
-			'A', Items.sugar, 'B', Items.wheat, 'C', Blocks.pumpkin
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(Blocks.netherrack, 3), new Object[] {
-			"AAA","BBB","CCC",
-			'A', Items.coal, 'B', Items.redstone, 'C', Blocks.cobblestone
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(Blocks.web, 2), new Object[] {
-			"A A"," A ","A A",
-			'A', Items.string
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(Items.name_tag, 1), new Object[] {
-			"  A"," B "," B ",
-			'A', Items.string, 'B', Items.paper
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(Items.skull, 1, 2), new Object[] {
-			"AAA","BAB","AAA",
-			'A', Items.rotten_flesh, 'B', Items.coal
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(Items.skull), new Object[] {
-			"AAA"," A ","AAA",
-			'A', Items.bone,
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(Items.skull, 1, 4), new Object[] {
-			"AAA","BAB","AAA",
-			'A', Items.gunpowder, 'B', Items.redstone
-		});
-		GameRegistry.addShapedRecipe(new ItemStack(MyCode.crystallineVial), new Object[] {
-			"   ","A A"," A ",
-			'A', MyCode.crystalIngot
-		});
+
 		GameRegistry.addShapedRecipe(new ItemStack(MyCode.crystalIngot), new Object[] {
 			"AAA","AAA","AAA",
-			'A', MyCode.crystallineShard
+			'A', MyCode.crystalDust
 		});
 		GameRegistry.addShapedRecipe(new ItemStack(MyCode.crystalSword), new Object[] {
 			" A "," A "," B ",
@@ -206,6 +194,7 @@ public class MyCode {
 			'A', MyCode.crystalIngot
 		});
 		GameRegistry.addShapelessRecipe(new ItemStack(MyCode.crystalIngot, 9), MyCode.crystalBlock);
+		GameRegistry.addShapelessRecipe(new ItemStack(MyCode.crystalDust, 9), MyCode.crystalIngot);
 		GameRegistry.addSmelting(new ItemStack(MyCode.crystallineOre), new ItemStack(MyCode.crystalIngot), 5);
 	}
 }

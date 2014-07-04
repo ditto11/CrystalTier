@@ -1,0 +1,15 @@
+package DMAexample.biomes;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.world.biome.BiomeGenBase;
+
+public class BiomeFactorsTest extends BiomeGenBase {
+
+	public BiomeFactorsTest(int height) {
+		super(height);
+		
+		setHeight(height_PartiallySubmerged);
+		topBlock = Blocks.wheat;
+		fillerBlock = Blocks.farmland;
+	}
+}

@@ -1,0 +1,11 @@
+package DMAexample.mobs;
+
+import net.minecraft.client.model.ModelBase;
+
+public class ModelTestMob extends ModelBase {
+
+	public ModelTestMob() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

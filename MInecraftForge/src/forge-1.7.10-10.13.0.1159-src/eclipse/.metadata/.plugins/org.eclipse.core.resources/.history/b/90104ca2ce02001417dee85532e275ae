@@ -1,0 +1,11 @@
+package DMAexample.edibles;
+
+import net.minecraft.item.ItemPotion;
+
+public class CrystalPotion extends ItemPotion {
+
+	public CrystalPotion() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

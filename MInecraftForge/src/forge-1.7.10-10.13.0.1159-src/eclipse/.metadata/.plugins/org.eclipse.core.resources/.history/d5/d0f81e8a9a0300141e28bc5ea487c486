@@ -1,0 +1,15 @@
+package DMAexample.crops;
+
+import net.minecraft.block.BlockCrops;
+import net.minecraft.creativetab.CreativeTabs;
+
+public class Snakeroot extends BlockCrops {
+
+	public Snakeroot() {
+		
+		setCreativeTab(CreativeTabs.tabDecorations);
+		setBlockName("Snakeroot");
+		setUnlocalizedName("Snakeroot");
+	}
+
+}

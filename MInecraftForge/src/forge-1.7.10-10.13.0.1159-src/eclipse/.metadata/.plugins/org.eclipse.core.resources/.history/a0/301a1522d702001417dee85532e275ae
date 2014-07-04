@@ -1,0 +1,31 @@
+package DMAexample.tools;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemArmor;
+
+public class CrystalArmor extends ItemArmor {
+
+	public CrystalArmor(ArmorMaterial crystalarmor, int renderIndex,
+			int armorType) {
+		super(crystalarmor, renderIndex, armorType);
+	
+		setCreativeTab(CreativeTabs.tabCombat);
+		
+		if(armorType == 0) {
+			setTextureName("dmaexample:crystalhelmet");
+			setUnlocalizedName("crystalhelmet");
+		}
+		else if(armorType == 1) {
+			setTextureName("dmaexample:crystalchestpiece)");
+			setUnlocalizedName("crystalChestPlate");
+		}
+		else if(armorType == 2) {
+			setTextureName("dmaexample:crystalleggings)");
+			setUnlocalizedName("crystalLeggings");
+		}
+		else if(armorType == 3) {
+			setTextureName("dmaexample:crystalboots)");
+			setUnlocalizedName("crystalBoots");
+		}
+	}
+}
